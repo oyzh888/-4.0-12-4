@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+form {
+	display: inline-block;
+}
+select, input {
+	margin: 0;
+	padding: 0;
+	float: left;
+	color:#606B70
+	
+}
+.option{
+	color:#606B70
+		
+		}
+.button

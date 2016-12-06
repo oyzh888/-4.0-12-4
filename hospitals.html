@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>医院预约挂号系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<!-- css -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="css/jcarousel.css" rel="stylesheet" />
+<link href="css/flexslider.css" rel="stylesheet" />
+<link href="css/style2.css" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/hospitals.js"></script>
+<script type="text/javascript" src="js/script1.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+
+	<!-- start header -->
+		<header>
+			<section class="contactInfo">
+	<div class="container"> 
+                   
+
+                    <div class="col-md-12"> 
+                            <div class="contact-area">
+                                <ul>
+                                    <li class="active"><a href="login.html">登录</a></li>
+                                    <li class="active"><a href="signup.html">注册</a></li>
+                                </ul>
+                            </div> 
+                    </div> 
+            </div>
+		</section>	
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">主页</a></li>
+                        <li class="active"><a href="portfolio.html">按医院查找</a></li>
+						<li><a href="departments.html">按科室查找</a></li>        
+                        <li><a href="illness.html">按疾病查找</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header><!-- end header -->
+	<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="pageTitle">按医院查找</h2>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+	<div class="container">
+		<div class="row">
+            <div class="demo">
+	
+	<ul class="select">
+		<li class="select-list">
+			<dl id="select1">
+				<dt>医院类型：</dt>
+				<dd class="select-all selected"><a href="#">全部</a></dd>
+				<dd><a href="#">卫生部直属医院</a></dd>
+				<dd><a href="#">北京市卫生局直属医院</a></dd>
+				<dd><a href="#">中国医科院所属医院</a></dd>
+				<dd><a href="#">中国中医科学院</a></dd>
+				<dd><a href="#">北京中医药大学</a></dd>
+				<dd><a href="#">北京大学附属医院</a></dd>
+				<dd><a href="#">驻京武警医院</a></dd>
+                <dd><a href="#">驻京部队医院</a></dd>
+                <dd><a href="#">部属厂矿高校医院</a></dd>
+                <dd><a href="#">北京区县属医院</a></dd>
+                <dd><a href="#">其他</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select2">
+				<dt>医院等级：</dt>
+				<dd class="select-all selected"><a href="#">全部</a></dd>
+				<dd><a href="#">三级医院</a></dd>
+				<dd><a href="#">二级医院</a></dd>
+				<dd><a href="#">一级医院</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select3">
+				<dt>医院位置：</dt>
+				<dd class="select-all selected"><a href="#">全部</a></dd>
+				<dd><a href="#">东城区</a></dd>
+				<dd><a href="#">西城区</a></dd>
+				<dd><a href="#">朝阳区</a></dd>
+				<dd><a href="#">丰台区</a></dd>
+                <dd><a href="#">石景山区</a></dd>
+                <dd><a href="#">海淀区</a></dd>
+                <dd><a href="#">门头沟区</a></dd>
+                <dd><a href="#">房山区</a></dd>
+                <dd><a href="#">通州区</a></dd>
+                <dd><a href="#">顺义区</a></dd>
+                <dd><a href="#">昌平区</a></dd>
+                <dd><a href="#">大兴区</a></dd>
+                <dd><a href="#">怀柔区</a></dd>
+                <dd><a href="#">平谷区</a></dd>
+                <dd><a href="#">密云区</a></dd>
+                <dd><a href="#">延庆区</a></dd>
+			</dl>
+		</li>
+		<li class="select-result">
+			<dl>
+				<dt>已选条件：</dt>
+				<dd class="select-no">暂时没有选择过滤条件</dd>
+			</dl>
+		</li>
+	</ul>
+	</div>
+</div>
+			<div class="col-lg-12">
+			  <div class="clearfix"></div>
+			  <div class="row">
+			    <section id="projects3">
+                  @{
+                  	var hospitalName="";
+                    var @Time="":
+                    var hospitalPhoneNumber="";
+			        var hospitalAddress=""；
+                  }
+			      <ul id="thumbs3" class="portfolio">
+			        <!-- Item Project and Filter Name -->
+			        <li class="item-thumbs col-md-3 design"  data-id="id-0" data-type="web">
+			          <!-- Fancybox - Gallery Enabled - Title - Full Image --><a id="firstPic" class="hover-wrap fancybox" data-fancybox-group="gallery" title="北京协和医院" href="details.html"> <span class="overlay-img"></span> <span class="overlay-img-thumb"><em class="icon-info-blocks "  >@hospitalName<br>
+			          <br>
+			          放号时间 : @Time<br>
+			          电话: @hospitalPhoneNumber<br>
+			          地址：@hospitalAddress</em></span></a><!-- Thumb Image and Description -->
+			          <img src="images/xiehe.jpg" alt="" ></li>
+                      
+			        <!-- End Item Project -->
+			        <!-- Item Project and Filter Name -->
+			        <li class="item-thumbs col-md-3 design" data-id="id-1" data-type="icon">
+			          <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+			          <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/2.jpg"> <span class="overlay-img"></span> <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span> </a>
+			          <!-- Thumb Image and Description -->
+			          <img src="img/works/2.jpg" alt=""></li>
+			        <!-- End Item Project -->
+			        <!-- Item Project and Filter Name -->
+			        <li class="item-thumbs col-md-3 photography" data-id="id-2" data-type="graphic">
+			          <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+			          <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/3.jpg"> <span class="overlay-img"></span> <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span> </a>
+			          <!-- Thumb Image and Description -->
+			          <img src="img/works/3.jpg" alt=""> </li>
+			        <!-- End Item Project -->
+			        <!-- Item Project and Filter Name -->
+			        <li class="item-thumbs col-md-3 design" data-id="id-0" data-type="web">
+			          <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+			          <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/4.jpg"> <span class="overlay-img"></span> <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span> </a>
+			          <!-- Thumb Image and Description -->
+			          <img src="img/works/4.jpg" alt=""> </li>
+			        <!-- End Item Project -->
+			        <!-- Item Project and Filter Name -->
+			        <li class="item-thumbs col-md-3 photography" data-id="id-4" data-type="web">
+			          <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+			          <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/5.jpg"> <span class="overlay-img"></span> <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span> </a>
+			          <!-- Thumb Image and Description -->
+			          <img src="img/works/5.jpg" alt=""> </li>
+			        <!-- End Item Project -->
+			        <!-- Item Project and Filter Name -->
+			        <li class="item-thumbs col-md-3 photography" data-id="id-5" data-type="icon">
+			          <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+			          <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/6.jpg"> <span class="overlay-img"></span> <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span> </a>
+			          <!-- Thumb Image and Description -->
+			          <img src="img/works/6.jpg" alt=""> </li>
+			        <!-- End Item Project -->
+			        <li class="item-thumbs col-md-3 design" data-id="id-0" data-type="web">
+			          <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+			          <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/7.jpg"> <span class="overlay-img"></span> <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span> </a>
+			          <!-- Thumb Image and Description -->
+			          <img src="img/works/7.jpg" alt=""> </li>
+			        <!-- End Item Project -->
+			        <!-- Item Project and Filter Name -->
+			        <li class="item-thumbs col-md-3 design" data-id="id-0" data-type="graphic">
+			          <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+			          <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/8.jpg"> <span class="overlay-img"></span> <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span> </a>
+			          <!-- Thumb Image and Description -->
+			          <img src="img/works/8.jpg" alt=""> </li>
+			        <!-- End Item Project -->
+		          </ul>
+		        </section>
+		      </div>
+		  </div>
+          <div class="dede_pages">
+
+<ul class="pagelist">
+
+<li class="nohref">首页</li> <li class="on">1</li>
+
+<li><a href="p2.html">2</a></li>
+
+<li><a href="p3.html">3</a></li>
+
+<li><a href="p4.html">4</a></li>
+
+<li><a href="p5.html">5</a></li>
+
+<li><a href="p6.html">6</a></li>
+
+<li><a href="p7.html">7</a></li>
+
+<li><a href="p8.html">8</a></li>
+
+<li><a href="p2.html">下一页</a></li> <li><a href="p8.html">末页</a></li>
+
+</ul>
+
+</div>
+		</div>
+       
+	</section>
+    
+    </div>
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">我们的联系方式</h5>
+					<address>
+					<strong>北京航空航天大学</strong><br>
+					海淀区学院路37号<br>
+					 北京，中国</address>
+					<p>
+						<i class="icon-phone"></i> 电话:000000 <br>
+						<i class="icon-envelope-alt"></i> email@163.com
+					</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">快速链接</h5>
+					<ul class="link-list">
+						<li><a href="http://www.bjguahao.gov.cn/index.htm">北京市预约挂号统一平台</a></li>
+						<li><a href="http://guahao.zjol.com.cn/">浙江在线预约诊疗服务平台</a></li>
+						<li><a href="http://www.jssz12320.cn/">苏州12320预约挂号平台</a></li>
+						<li><a href="http://www.guahao.gov.cn/">广州市统一预约挂号平台</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">分类搜索</h5>
+					<ul class="link-list">
+						<li><a href="hospitals.html">按医院搜索</a></li>
+						<li><a href="departments.html">按科室搜索</a></li>
+						<li><a href="illness.html">按疾病搜索</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">其他</h5>
+					<ul class="link-list">
+						<li><a href="statement.html">法律法规</a></li>
+						<li><a href="protocol.html">服务协议</a></li>
+						<li><a href="contact.html">意见反馈</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						<p>
+							<span>Copyright&copy; 红红火火 All right reserved </span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+
+
+<script src="js/oyzhJS_1.js"></script>
+</body>
+</html>

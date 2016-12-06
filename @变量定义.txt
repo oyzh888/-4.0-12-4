@@ -1,0 +1,406 @@
+
+personal.html
+
+预约单查询
+
+选择分类：@{string[] Yuyue_kinds={“全部”,”按医院查找”,“按科室查找”,“按疾病查找”,“按医生查找”,“按预约人查找”,”按订单状态查找”};}
+
+输入关键词：@{var Yuyue_keyword=“”}
+
+输入开始日期：@{var Yuyue_startDate=“”}
+
+输入结束日期：@{var Yuyue_endDate=“”}
+
+
+
+预约时间：@{var Yuyue_shijian=“”}
+
+预约医院：@{var Yuyue_yiyuan=“”}
+
+预约诊室：@{var Yuyue_zhenshi=“”}
+
+预约医生：@{var Yuyue_yisheng=“”}
+
+预约人：@{var Yuyueren=“”}
+
+预约单状态：@{var Yuyuedan=“”}
+
+
+
+@{
+	string[] Yuyue_shijian;
+	@foreach(var x in Yuyue_shijian)
+		{
+			var Yuyue_yiyuan=“”;
+			var Yuyue_zhenshi=“”;
+			var Yuyue_yisheng=“”;
+			var Yuyue_ren=“”;
+			var Yuyuedan=“”;
+			<tr>
+				<td>@x</td>
+				<td>@Yuyue_yiyuan</td>
+				<td>@Yuyue_zhenshi</td>
+				<td>@Yuyue_yisheng</td>
+				<td>@Yuyue_ren</td>
+				<td>@Yuyuedan</td>
+				<td>
+					<a><input type=“button” class=“keshiguanli” value=“删除预约单”></a>					                        </td>
+			</tr>
+		} 
+}
+
+
+
+挂号单管理
+
+选择分类：@{string[] Guahao_kinds={“全部”,”按医院查找”,“按科室查找”,“按疾病查找”,“按医生查找”,“按预约人查找”,”按订单状态查找”};}
+
+输入关键词：@{var Guahao_keyword=“”}
+
+输入开始日期：@{var Guahao_startDate=“”}
+
+输入结束日期：@{var Guahao_endDate=“”}
+
+
+
+就诊时间：@{string[] Guahao_shijian;}
+
+医院：@Guahao_yiyuan;
+
+诊室：@Guahao_zhenshi;
+
+医生：@Guahao_yisheng;
+
+挂号人：@Guahaoren;
+
+诊费：@Guahao_fei;
+
+挂号单状态：@Guahaodan;
+
+
+
+@{
+	string[] Guahao_shijian;
+	@foreach(var x in Guahao_shijian)
+		{
+			var Guahao_yiyuan=“”;
+			var Guahao_zhenshi=“”;
+			var Guahao_yisheng=“”;
+			var Guahao_ren=“”;
+			var Guahao_fei=“”;
+			var Guahaodan=“”;
+			<tr>
+				<td>@x</td>
+				<td>@Guahao_yiyuan</td>
+				<td>@Guahao_zhenshi</td>
+				<td>@Guahao_yisheng</td>
+				<td>@Guahao_ren</td>
+				<td>@Guahao_fei</td>
+				<td>@Guahaodan</td>
+				<td>
+					<a><input type=“button” class=“keshiguanli” value=“删除挂号单”></a>					                        </td>
+			</tr>
+		} 
+}
+
+
+
+
+就诊人管理
+
+姓名：@{string[] Personal_name};
+
+性别:@Personal_sex
+
+证件类型:@Personal_type
+
+证件号:@Personal_id
+
+手机号:@Personal_phone
+
+
+
+@{
+	string[] Personal_name;
+	@foreach(var x in Personal_name)
+		{
+			var Personal_sex=“”;
+			var Personal_type=“”;
+			var Personal_id=“”;
+			var Personal_phone=“”;
+			<tr>
+				<td>@x</td>
+				<td>@Personal_sex</td>
+				<td>@Personal_type</td>
+				<td>@Personal_id</td>
+				<td>@Personal_phone</td>
+				<td>
+					<a><input type=“button” class=“keshiguanli” value=“删除就诊人”></a>					                        </td>
+			</tr>
+		} 
+}
+
+
+个人信息
+头像：@Myself_touxiang;
+
+姓名：@Myself_name
+
+性别：@Myself_sex
+
+证件类型：@Myself_type
+
+证件号码：@Myself_id
+
+诚信等级：@Myself_chengxin
+
+设置密码：@Myself_password
+
+确认密码：@Myself_passwordAgain
+
+联系邮箱：@Myself_email
+
+手机号码：@Myself_phone
+
+
+@{
+	var Myself_touxiang;
+	var Myself_name;
+	var Myself_sex;
+	var Myself_type;
+	var Myself_id;
+	var Myself_chengxin;
+	var Myself_password;
+	var Myself_passwordAgain;
+	var Myself_email;
+	var Myself_phone;
+    
+                    if(IsPost)
+                    {
+                    	Myself_password=Request["user_password"];
+                        Myself_passwordAgain=Request["user_passwordAgain"];
+                        Myself_email=Request["emailaddress"];
+                        Myself_phone=Request["phonenumber"];
+                    }
+}
+
+意见反馈&contact.html
+
+姓名：@Contact_name
+联系方式：@Contact_email
+内容：@Contact_message
+
+ @{
+                    	if(IsPost)
+                        {
+                            var Contact_name=Request["c_name"];
+                            var Contact_email=Request["c_email"];
+                            var Contact_message=Request["c_message"];
+                        }
+   }
+
+
+
+
+departments.html
+
+数组：@{string[] Menu_departments;}
+数组：@{string[] List_departments;}
+
+@{
+	string[] Menu_departments;
+	@foreach(var x in Menu_departments)
+	{
+		var y=x;
+		<li><a class=“sscroll” href=“departments.html#@y”>@x</a></li>
+	}
+}
+
+@{
+	string[]List_departments;
+	@foreach(var x in Menu_departments)
+	{
+		<section id=“@x” class=“one”>
+			<div class=“row”>
+				<div class=“col-md-12”>										<div class=“header-content”>			
+						<h3>@x</h3>
+					</div>
+				</div>
+				<div class=“col-md-12”>
+					<div class=“row”>
+						@foreach(var y in List_departments)
+						{
+							<a class=“only” href=“selectedkeshi.html”>@y</a>
+						}
+					</div>
+				</div>
+			</div>
+		</section>
+	}
+
+}
+
+illness.html
+
+数组：@{string[] Menu_illness;}
+
+数组：@{string[] List_illness;}
+
+@{
+	string[] Menu_illness;
+	@foreach(var x in Menu_illness)
+	{
+		var y=x;
+		<li><a class=“sscroll” href=“illness.html#@y”>@x</a></li>
+	}
+}
+
+@{
+	string[]List_illness;
+	@foreach(var x in Menu_illness)
+	{
+		<section id=“@x” class=“one”>
+			<div class=“row”>
+				<div class=“col-md-12”>										<div class=“header-content”>			
+						<h3>@x</h3>
+					</div>
+				</div>
+				<div class=“col-md-12”>
+					<div class=“row”>
+						@foreach(var y in List_illness)
+						{
+							<a class=“only” href=“selectedjibing.html”>@y</a>
+						}
+					</div>
+				</div>
+			</div>
+		</section>
+	}
+
+}
+
+
+
+managedepartments.html
+
+科室名称：@Keshi_name
+
+科室医生：@{string[] Yisheng_name;}
+
+
+@{
+	string[] Yisheng_name;
+	@foreach(var x in Yisheng_name)
+		{
+			<a>@x</a>
+			<a><input type=“button” class=“keshiguanli” value=“修改医生信息”></a>
+			<a><input type=“button” class=“keshiguanli” value=“删除医生”></a>
+
+		} 
+}
+
+
+
+
+
+manageindex.html
+
+医院名称：@{string[] Yiyuan_name;}
+
+
+科室名称：@{string[] Keshi_name;}
+
+
+医生名称：@{string[] Yisheng_name;}
+
+
+
+@{
+	string[] Yiyuan_name;
+	@foreach(var x in Yiyuan_name)
+		{
+			<a href=“managehospital.html” class=“keshi”>@x</a>
+			<a href=“managehospital.html”><input type=“button” class=“keshiguanli” value=“修改医院信息”></a>
+			<a><input type=“button” class=“keshiguanli” value=“删除医院”></a>
+		} 
+}
+
+
+@{
+	string[] Keshi_name;
+	@foreach(var x in Keshi_name)
+		{
+			<a href=“managedepartment.html” class=“keshi”>@x</a>
+			<a href=“managedepartment.html”><input type=“button” class=“keshiguanli” value=“修改科室信息”></a>
+			<a href=“managedepartment.html”><input type=“button” class=“keshiguanli” value=“删除科室”></a>
+		} 
+}
+
+
+@{
+	string[] Yisheng_name;
+	@foreach(var x in Yisheng_name)
+		{
+			<a href=“managedoctor.html” class=“keshi”>@x</a>
+			<a href=“managedoctor.html”><input type=“button” class=“keshiguanli” value=“修改医生信息”></a>
+			<a href=“managedoctor.html”><input type=“button” class=“keshiguanli” value=“删除医生”></a>
+		} 
+}
+
+
+
+foreach循环
+如果使用的是集合或者数组，会经常用到foreach循环
+集合是一组相似的对象，foreach循环可以遍历集合直到完成
+下面的实例遍历ASP.NET Request.ServerVariables
+
+<html>
+	<body>
+		<ul>
+			@foreach(var x in Request.ServerVariables)
+				{
+					<li>@x</li>
+				}
+		</ul>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@{
+	if(IsPost)
+    {
+    	var Personal_name = Request["user_name"];
+        var Personal_sex = Request["sex"];
+        var Personal_type = Request["certificate type"];
+        var Personal_id = Request["idnumber"];
+        var Personal_password = Request["user_password"];
+        var Personal_passwordagain = Request["user_passwordAgain"];
+    	var Personal_phone = Request["phonenumber"];
+    }
+}

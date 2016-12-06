@@ -1,0 +1,12 @@
+@charset "utf-8";
+body{color:#606b70;background:#FFF;font:12px/1.6 Verdana, Helvetica, sans-serif;text-align:center;}
+*{margin:0;}
+input,select{font-size:12px;vertical-align:middle;}
+body div{text-align:left;}
+textarea,input{word-wrap:break-word;word-break:break-all;padding:0px;}
+li{list-style-type:none;}
+img{border:0 none;}
+a{text-decoration:none;color:#606b70; }
+a:hover{color:#2eb3ba; }
+a:link, a:visited{color:#333;text-decoration: none;outline: none;}
+a:hover{color:#0E4470;text-decoration: none;}

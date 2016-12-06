@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+@{ var Yuyue_guahaofei = }
+@{ var Personal_name = }
+@{ var Yiyuan_mingcheng = }
+@{ var Yuyue_keshi = }
+@{ var Yisheng_zhiwei = }
+@{ var Yuyue_shijian = }
+@{ var Personal_phone = }
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Payment2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<!-- css -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+<link href="css/custom.css" rel="stylesheet" />
+<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="css/jcarousel.css" rel="stylesheet" />
+<link href="css/flexslider.css" rel="stylesheet" />
+<link href="css/style2.css" rel="stylesheet" />
+
+<link href="http://fonts.googleapis.com/css?family=Chewy" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Terminal+Dosis+Light" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet" type="text/css">
+ 
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+	<!-- start header -->
+	<header>
+		<section class="contactInfo">
+			<div class="container"> 
+                    <div class="col-md-12"> 
+                            <div class="contact-area">
+                                <ul>
+                                </ul>
+                            </div> 
+                    </div> 
+            </div>
+		</section>	
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">主页</a></li> 
+						<li><a href="hospitals.html">按医院查找</a></li>
+                        <li><a href="departments.html">按科室查找</a></li>
+                        <li><a href="illness.html">按疾病查找</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header><!-- end header -->
+	<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="pageTitle">选择支付方式</h2>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+	
+    <div id="divBoxed" class="container">
+
+    <div class="transparent-bg" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;zoom: 1;"></div>
+
+
+
+    <div class="contentArea">
+
+        <div class="divPanel notop page-content">
+            <div class="row-fluid">                	
+                    <h3>支付信息</h3>
+
+                		<div class="alert alert-info">                          
+                    	<span>应付金额：</span>
+                        <span class="price">
+                        <span>¥</span>
+                        <span id="JS_pay_total_amount">@Yuyue_guahaofei</span></span>
+                        	<p class="">挂号单信息：姓名：@Personal_name 医院：@Yiyuan_mingcheng 科室：@Yuyue_keshi 医师：@Yisheng_zhiwei 时间：@Yuyue_shijian 电话：@Personal_phone</p>
+                		</div>
+
+                                       
+                    <h3>请选择付款方式</h3>
+        			<div class="alert alert-info">                          
+
+                    <form>
+                    	<label class="radio">
+                        	<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        就诊前于挂号处支付
+                    	</label>
+                    	<label class="radio">
+                        	<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        支付宝（扫描二维码）
+                    	</label>
+                	</form>
+                    </div>
+					<p style="text-align:center;">
+                	<img src="http://placehold.it/140x140" class="img-rounded" alt="" />&nbsp;
+            		</p>
+            		<br />
+
+                    <p style="text-align:right;">
+                    <input type="button" value="确认" class="btn btn-default">
+                	</p>
+                </div>
+        </div>
+    </div>
+</div>
+ 
+	</section>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">我们的联系方式</h5>
+					<address>
+					<strong>北京航空航天大学</strong><br>
+					海淀区学院路37号<br>
+					 北京，中国</address>
+					<p>
+						<i class="icon-phone"></i> 电话:000000 <br>
+						<i class="icon-envelope-alt"></i> email@163.com
+					</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">快速链接</h5>
+					<ul class="link-list">
+						<li><a href="http://www.bjguahao.gov.cn/index.htm">北京市预约挂号统一平台</a></li>
+						<li><a href="http://guahao.zjol.com.cn/">浙江在线预约诊疗服务平台</a></li>
+						<li><a href="http://www.jssz12320.cn/">苏州12320预约挂号平台</a></li>
+						<li><a href="http://www.guahao.gov.cn/">广州市统一预约挂号平台</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">分类搜索</h5>
+					<ul class="link-list">
+						<li><a href="hospitals.html">按医院搜索</a></li>
+						<li><a href="departments.html">按科室搜索</a></li>
+						<li><a href="illness.html">按疾病搜索</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">其他</h5>
+					<ul class="link-list">
+						<li><a href="statement.html">法律法规</a></li>
+						<li><a href="protocol.html">服务协议</a></li>
+						<li><a href="contact.html">意见反馈</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						<p>
+							<span>Copyright&copy; 红红火火 All right reserved </span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script> 
+<script src="js/portfolio/jquery.quicksand.js"></script>
+<script src="js/portfolio/setting.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/validate.js"></script>
+</body>
+</html>

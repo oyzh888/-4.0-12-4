@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--
+@{
+	if(IsPost)
+    {
+    	var Yiyuan_mingcheng = Request["hospital_name"];
+        var Yiyuan_tupian = Request["hospital_img"];
+        var Yiyuan_dengji = Request["hospital_rank"];
+        var Yiyuan_quyu = Request["hospital_area"];
+        var Yiyuan_leixing = Request["hospital_type"];
+        var Yiyuan_keshi1 = Request["hospital_dpt1"];
+        var Yiyuan_keshi2 = Request["hospital_dpt2"];
+        var Yiyuan_lianjie = Request["hospital_link"];
+        var Yiyuan_rexian = Request["hospital_tel"];
+        var Yiyuan_dizhi = Request["hospital_address"];
+        var Yiyuan_jiaotong = Request["hospital_transport"];
+        var Yiyuan_jieshao = Request["hospital_info"];
+        var Yiyuan_guize = Request["hospital_rules"];
+        var Yiyuan_zhuyi = Request["hospital_notice"];
+    }
+}
+-->
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="css/pintuer.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="js/jquery.js"></script>
+<script src="js/pintuer.js"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>设置医院</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="">  
+      <div class="form-group">
+        <div class="label">
+          <label>医院名称：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="" name="hospital_name" data-validate="required:请输入名称" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>图片：</label>
+        </div>
+        <div class="field">
+          <input type="text" id="url1" name="hospital_img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
+          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+          <div class="tipss">图片尺寸：500*500</div>
+        </div>
+      </div>     
+      
+      <if condition="$iscid eq 1">
+        <div class="form-group">
+          <div class="label">
+            <label>医院等级：</label>
+          </div>
+          <div class="field">
+            <select name="hospital_rank" class="input w50">
+              <option value="">请选择等级</option>
+              <option value="">三级甲等</option>
+              <option value="">三级乙等</option>
+              <option value="">三级丙等</option>
+              <option value="">二级甲等</option>
+              <option value="">二级乙等</option>
+              <option value="">二级丙等</option>
+              <option value="">一级甲等</option>
+              <option value="">一级乙等</option>
+              <option value="">一级丙等</option>
+            </select>
+            <div class="tips"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label">
+            <label>区域：</label>
+          </div>
+          <div class="field">
+            <select name="hospital_area" class="input w50">
+              <option value="">请选择区域</option>
+              <option value="">东城区</option>
+              <option value="">西城区</option>
+              <option value="">朝阳区</option>
+              <option value="">丰台区</option>
+              <option value="">石景山区</option>
+              <option value="">海淀区</option>
+              <option value="">门头沟区</option>
+              <option value="">房山区</option>
+              <option value="">通州区</option>
+              <option value="">顺义区</option>
+              <option value="">昌平区</option>
+              <option value="">大兴区</option>
+              <option value="">怀柔区</option>
+              <option value="">平谷区</option>
+              <option value="">密云县</option>
+              <option value="">延庆县</option>
+            </select>
+            <div class="tips"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label">
+            <label>医院类型：</label>
+          </div>
+          <div class="field" style="padding-top:8px;"> 
+            全部 <input type="checkbox" name="hospital_type"/>
+            卫生部直属医院 <input type="checkbox" name="hospital_type"/>
+            北京市卫生局直属医院 <input type="checkbox" name="hospital_type"/> 
+            中国医科院所属医院 <input type="checkbox" name="hospital_type"/>
+            中国中医科学院 <input type="checkbox" name="hospital_type"/>
+            北京中医药大学 <input type="checkbox" name="hospital_type"/>
+            北京大学附属医院 <input type="checkbox" name="hospital_type"/>
+            驻京武警医院 <input type="checkbox" name="hospital_type"/>
+            驻京部队医院 <input type="checkbox" name="hospital_type"/>
+            部属厂矿高效医院 <input type="checkbox" name="hospital_type"/>
+            北京区县属医院 <input type="checkbox" name="hospital_type"/>
+            其它 <input type="checkbox" name="hospital_type"/>
+          </div>
+        </div>
+        
+        <div class="form-group">
+        	<div class="label">
+          	<label>添加科室：</label>
+        	</div>
+        	<div class="field">
+          	<input type="text" class="input w50" value="" name="hospital_dpt1" />
+            <input type="text" class="input w50" value="" name="hospital_dpt2" />
+            <button class="button bg-main icon-check-square-o" name="add">添加</button>
+        	</div>
+      	</div>
+        
+        <div class="form-group">
+        	<div class="label">
+          	<label>医院链接：</label>
+        	</div>
+        	<div class="field">
+          	<input type="text" class="input w50" value="" name="hospital_link" data-validate="required:请输入链接" />
+          	<div class="tips"></div>
+        	</div>
+      	</div>
+        <div class="form-group">
+        	<div class="label">
+          	<label>医院热线：</label>
+        	</div>
+        	<div class="field">
+          	<input type="text" class="input w50" value="" name="hospital_tel" data-validate="required:请输入热线" />
+          	<div class="tips"></div>
+        	</div>
+      	</div>
+      </if>
+     
+      <div class="form-group">
+        <div class="label">
+          <label>医院地址：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="hospital_address" value="" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="label">
+          <label>交通指南：</label>
+        </div>
+        <div class="field">
+          <textarea class="input" name="hospital_transport" style=" height:90px;"></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>医院介绍：</label>
+        </div>
+        <div class="field">
+          <textarea name="hospital_info" class="input" style="height:450px; border:1px solid #ddd;"></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>预约规则：</label>
+        </div>
+        <div class="field">
+          <textarea name="hospital_rules" class="input" style="height:250px; border:1px solid #ddd;"></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+     
+      <div class="clear"></div>
+      <div class="form-group">
+        <div class="label">
+          <label>其它注意事项：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="hospital_notice" value=""/>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body></html>

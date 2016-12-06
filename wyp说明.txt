@@ -1,0 +1,40 @@
+details 
+
+地址：@hospitalAddress 
+电话：@hospitalPhoneNumber 
+路线：@hospitalRoute
+
+index  jquery_select.js
+
+var val = $("input.inp_srh").val(); 
+var val2=$("option").val();//0全部 1医院 4科室 22疾病
+window.href="Search?query="+val+"&option="+val2;
+
+hospitals script.js
+
+window.href="Search?leixing="+val+"&dengji="+val2+"&weizhi="+val3;
+@hospitalName
+放号时间 : @Time
+电话: @hospitalPhoneNumber
+地址：@hospitalAddress
+
+selectjibing
+
+@jibing
+
+selectkeshi
+
+@keshi
+
+managedoctor
+
+var val = $("input.keshi").val(); 
+var val2 = $("input.name").val();
+var val3 = $("input.zhiwei").val();
+var val4 = $("input.xingbie").val();
+var val5 = $("input.zhuzhi").val();
+var val6 = $("input.nianling").val();
+var val7 = $("input.shijian").val();
+window.href="Search?keshi="+val+"&name="+val2+"&zhiwei="+val3+"&xingbie="+val4+"&zhuzhi="+val5+"&nianling="+val6+"&shijian="+val7;
+
+

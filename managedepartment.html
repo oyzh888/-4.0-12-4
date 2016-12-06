@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <link href="css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <title>医院预约挂号系统</title>
+	
+    <!--Library Styles-->    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/scheme/purple.css" rel="stylesheet">
+    <link href="css/signup.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head> 
+<body data-spy="scroll">
+
+    <div id="main-wrapper">
+        <header>
+			<section class="contactInfo">
+			</section>	
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse ">
+                   
+                </div>
+            </div>
+        </div>
+		</header>
+
+        <!-- Site Navigation -->
+        <div id="menu">
+            <nav class="navbar navbar-default" role="navigation">
+            	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
+                        <span class="sr-only">医院预约挂号系统</span>
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a class="sscroll" href="manageindex.html">退出</a></li>
+                        <li><a class="sscroll" href="index.html#services">科室信息</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="container">
+            @{
+            	var Keshi_name;
+            }
+            <section id="" class="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header-content">
+                            <h3>科室信息</h3>
+                        </div>
+                    </div>
+                    <div class="information">
+                    	<label for="name">科室名称：</label><label>@Keshi_name</label>
+                        <input type="text">
+                        <div class="yuyueinfor">
+                    	
+                            @{
+								string[] Yisheng_name;
+								@foreach(var x in Yisheng_name)
+								{
+									<a>@x</a>
+									<a><input type="button" class="keshiguanli" value="修改医生信息"></a>
+									<a><input type="button" class="keshiguanli" value="删除医生"></a>
+
+								} 
+							}
+							
+                       <a href="" class="keshi">1</a><a href="" class="keshi">2</a><a href="" class="keshi">下一页</a>
+
+                    </div> 
+                        <a href="managedoctor.html"><input type="button" class="keshiguanli2" value="添加医生"></a>
+                        <a href=""><input type="button" class="keshiguanli2" value="确认修改"></a>
+                    </div>         
+                </div>
+            </section>
+		</div>            
+    <footer>
+	<div class="container2" style="text-align:center">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">我们的联系方式</h5>
+					<address>
+					<strong>北京航空航天大学</strong><br>
+					海淀区学院路37号<br>
+					 北京，中国</address>
+					<p>
+						<i class="icon-phone"></i> 电话:000000 <br>
+						<i class="icon-envelope-alt"></i> email@163.com
+					</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">快速链接</h5>
+					<ul class="link-list">
+						<li><a href="http://www.bjguahao.gov.cn/index.htm">北京市预约挂号统一平台</a></li>
+						<li><a href="http://guahao.zjol.com.cn/">浙江在线预约诊疗服务平台</a></li>
+						<li><a href="http://www.jssz12320.cn/">苏州12320预约挂号平台</a></li>
+						<li><a href="http://www.guahao.gov.cn/">广州市统一预约挂号平台</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">分类搜索</h5>
+					<ul class="link-list">
+						<li><a href="hospitals.html">按医院搜索</a></li>
+						<li><a href="departments.html">按科室搜索</a></li>
+						<li><a href="illness.html">按疾病搜索</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="widget">
+					<h5 class="widgetheading">其他</h5>
+					<ul class="link-list">
+						<li><a href="statement.html">法律法规</a></li>
+						<li><a href="protocol.html">服务协议</a></li>
+						<li><a href="contact.html">意见反馈</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container2">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright" style="text-align:center">
+						<p>
+							<span> Copyright&copy; 红红火火 All right reserved </span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+        
+</div>
+    
+
+
+
+
+
+    <!-- Library Scripts -->
+    <!--
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/lib/jquery.preloader.js"></script>
+    <script src="js/lib/nivo-lightbox.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lib/jquery.superslides.min.js"></script>
+    <script src="js/lib/smoothscroll.js"></script>
+    <script src="js/lib/jquery.sudoslider.min.js"></script>
+    <script src="js/lib/jquery.bxslider.min.js"></script>
+    <script src="js/lib/jquery.mixitup.min.js"></script>
+    <script src="js/lib/jquery.backtotop.js"></script>
+    <script src="js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script src="js/lib/retina.min.js"></script>
+
+      
+    <script src="js/main.js"></script>
+    -->
+</body>
+
+</html>
